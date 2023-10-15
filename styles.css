@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.eclipse {
+    width: 50vmin;
+    height: 50vmin;
+    background: radial-gradient(ellipse, #000 30%, transparent 70%);
+    border-radius: 50%;
+    position: relative;
+    animation: eclipseAnimation 10s linear infinite;
+}
+
+.heart {
+    width: 20vmin;
+    height: 20vmin;
+    background-image: url('./corazon.png'); /* Agrega una imagen de corazón */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 40%; /* Ajusta la ubicación vertical del corazón */
+    left: 40%; /* Ajusta la ubicación horizontal del corazón */
+    animation: heartAnimation 10s linear infinite;
+}
+
+@keyframes eclipseAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes heartAnimation {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15vmin);
+    }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .eclipse {
+        width: 70vmin;
+        height: 70vmin;
+    }
+    .heart {
+        width: 30vmin;
+        height: 30vmin;
+        top: 10vmin;
+        left: 10vmin;
+    }
+}
+
+@keyframes heartAnimation {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15vmin);
+    }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .eclipse {
+        width: 70vmin;
+        height: 70vmin;
+    }
+    .heart {
+        width: 30vmin;
+        height: 30vmin;
+        top: 10vmin;
+        left: 10vmin;
+    }
+}
