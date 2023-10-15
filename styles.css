@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-color: #000;
     overflow: hidden;
+    position: relative;
 }
 
 .eclipse {
@@ -17,17 +18,13 @@ body {
     animation: eclipseAnimation 10s linear infinite;
 }
 
-.heart {
-    width: 20vmin;
-    height: 20vmin;
-    background-image: url('./corazon.png'); /* Agrega una imagen de corazón */
+.heart-rain {
+    width: 20px;
+    height: 20px;
+    background-image: url('corazon.png'); /* Agrega una imagen de corazón */
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
     position: absolute;
-    top: 40%; /* Ajusta la ubicación vertical del corazón */
-    left: 40%; /* Ajusta la ubicación horizontal del corazón */
-    animation: heartAnimation 10s linear infinite;
+    animation: heartRainAnimation 10s linear infinite;
 }
 
 @keyframes eclipseAnimation {
@@ -39,48 +36,17 @@ body {
     }
 }
 
-@keyframes heartAnimation {
-    0%, 100% {
-        transform: translateX(0);
+@keyframes heartRainAnimation {
+    0% {
+        transform: translateY(-10px) rotate(45deg);
+        opacity: 0;
     }
     50% {
-        transform: translateX(15vmin);
+        transform: translateY(400px) rotate(45deg);
+        opacity: 1;
     }
-}
-
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-    .eclipse {
-        width: 70vmin;
-        height: 70vmin;
-    }
-    .heart {
-        width: 30vmin;
-        height: 30vmin;
-        top: 10vmin;
-        left: 10vmin;
-    }
-}
-
-@keyframes heartAnimation {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(15vmin);
-    }
-}
-
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-    .eclipse {
-        width: 70vmin;
-        height: 70vmin;
-    }
-    .heart {
-        width: 30vmin;
-        height: 30vmin;
-        top: 10vmin;
-        left: 10vmin;
+    100% {
+        transform: translateY(800px) rotate(45deg);
+        opacity: 0;
     }
 }
